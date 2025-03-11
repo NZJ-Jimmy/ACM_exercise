@@ -36,8 +36,10 @@ int main() {
         ymd.next_day();
         string str = ymd.format();
         string str_r;
-        for (auto i = str.rbegin(); i != str.rend(); i++)
-            str_r += *i;
+        str_r.resize(8);
+        move(str.rbegin(), str.rend(), str_r.begin());
+        // for (auto i = str.rbegin(); i != str.rend(); i++)
+        //     str_r += *i;
         
         if (not_found && str == str_r) {
             cout << str << '\n';
